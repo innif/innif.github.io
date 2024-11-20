@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/money-counter/static/css/main.8030980c.css",
+    "main.js": "/money-counter/static/js/main.ec601262.js",
+    "static/js/453.94a0ec4b.chunk.js": "/money-counter/static/js/453.94a0ec4b.chunk.js",
+    "index.html": "/money-counter/index.html",
+    "main.8030980c.css.map": "/money-counter/static/css/main.8030980c.css.map",
+    "main.ec601262.js.map": "/money-counter/static/js/main.ec601262.js.map",
+    "453.94a0ec4b.chunk.js.map": "/money-counter/static/js/453.94a0ec4b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8030980c.css",
+    "static/js/main.ec601262.js"
+  ]
+}
