@@ -30,7 +30,7 @@
             }"
             @click="incrementDrink(name)"
           >
-            <div class="p-2 h-20 relative flex flex-col">
+            <div class="p-2 h-24 relative flex flex-col justify-between"> <!-- Höhe von h-20 auf h-24 erhöht -->
               <div class="mt-2 mb-1 text-center">
                 <div class="font-bold" :class="getTextClass(name)">
                   {{ name }}
