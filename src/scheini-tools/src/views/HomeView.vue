@@ -1,7 +1,9 @@
-<!-- src/views/HomeView.vue -->
+// src/views/HomeView.vue
 <template>
   <div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold text-center mb-12 text-white">Meine Tools</h1>
+    <h1 class="text-4xl font-bold text-center mb-12" :class="darkMode ? 'text-white' : 'text-gray-900'">
+      Meine Tools
+    </h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <router-link 
@@ -10,12 +12,13 @@
         :to="tool.path"
         class="group"
       >
-        <div class="h-48 bg-gray-800 rounded-lg p-6 flex flex-col justify-between transform transition duration-300 hover:scale-105 hover:shadow-2xl border border-gray-700 hover:border-blue-500">
+        <div class="h-48 rounded-lg p-6 flex flex-col justify-between transform transition duration-300 hover:scale-105 hover:shadow-2xl border"
+             :class="darkMode ? 'bg-gray-800 border-gray-700 hover:border-blue-500' : 'bg-white border-gray-200 hover:border-blue-500'">
           <div>
             <h2 class="text-2xl font-bold mb-2 text-blue-400 group-hover:text-blue-300">
               {{ tool.name }}
             </h2>
-            <p class="text-gray-400 group-hover:text-gray-300">
+            <p :class="darkMode ? 'text-gray-400 group-hover:text-gray-300' : 'text-gray-600 group-hover:text-gray-800'">
               {{ tool.description }}
             </p>
           </div>
@@ -37,6 +40,8 @@
 
 <script>
 import { EuroIcon, CalculatorIcon, BeerIcon } from 'lucide-vue-next'
+import { useThemeStore } from '../stores/theme'
+import { storeToRefs } from 'pinia'
 
 export default {
   name: 'HomeView',
@@ -44,6 +49,14 @@ export default {
     EuroIcon,
     CalculatorIcon,
     BeerIcon
+  },
+  setup() {
+    const themeStore = useThemeStore()
+    const { darkMode } = storeToRefs(themeStore)
+    
+    return {
+      darkMode
+    }
   },
   data() {
     return {
