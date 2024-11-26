@@ -7,7 +7,7 @@ import FullscreenClock from '../components/FullscreenClock.vue'
 import TimerView from '../components/Timer.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/scheini-tools/'),
   routes: [
     {
       path: '/',
