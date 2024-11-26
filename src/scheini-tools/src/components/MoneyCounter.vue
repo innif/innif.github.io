@@ -31,6 +31,7 @@
                 <input
                   type="number"
                   v-model.number="counts[value]"
+                  placeholder="0"
                   min="0"
                   class="w-24 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-right transition-colors"
                   :class="darkMode ? 'bg-gray-800 text-white border-gray-600' : 'bg-white text-gray-900 border-gray-300'"
@@ -54,6 +55,7 @@
                 <input
                   type="number"
                   v-model.number="counts[value]"
+                  placeholder="0"
                   min="0"
                   class="w-24 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-right transition-colors"
                   :class="darkMode ? 'bg-gray-800 text-white border-gray-600' : 'bg-white text-gray-900 border-gray-300'"
@@ -106,8 +108,8 @@ export default {
       bills: [500, 200, 100, 50, 20, 10, 5],
       coins: [2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01],
       counts: {
-        '500': 0, '200': 0, '100': 0, '50': 0, '20': 0, '10': 0, '5': 0,
-        '2': 0, '1': 0, '0.5': 0, '0.2': 0, '0.1': 0, '0.05': 0, '0.02': 0, '0.01': 0
+        '500': '', '200': '', '100': '', '50': '', '20': '', '10': '', '5': '',
+        '2': '', '1': '', '0.5': '', '0.2': '', '0.1': '', '0.05': '', '0.02': '', '0.01': ''
       }
     }
   },
@@ -120,7 +122,7 @@ export default {
     },
     resetCounts() {
       Object.keys(this.counts).forEach(key => {
-        this.counts[key] = 0
+        this.counts[key] = ''
       })
     }
   }
