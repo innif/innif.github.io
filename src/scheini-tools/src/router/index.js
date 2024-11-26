@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MoneyCounter from '../components/MoneyCounter.vue'
 import DrinkOrder from '../components/DrinkOrder.vue'
+import FullscreenClock from '../components/FullscreenClock.vue'
+import TimerView from '../components/Timer.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +23,16 @@ const router = createRouter({
       path: '/drink-order',
       name: 'drink-order',
       component: DrinkOrder
+    },
+    {
+      path: '/clock',
+      name: 'clock',
+      component: FullscreenClock
+    },
+    {
+      path: '/timer',
+      name: 'timer',
+      component: TimerView
     }
   ]
 })

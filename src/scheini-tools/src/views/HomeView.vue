@@ -2,7 +2,7 @@
 <template>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold text-center mb-12" :class="darkMode ? 'text-white' : 'text-gray-900'">
-      Meine Tools
+      Scheinbar-Tools
     </h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { EuroIcon, CalculatorIcon, BeerIcon } from 'lucide-vue-next'
+import { EuroIcon, CalculatorIcon, BeerIcon, ClockIcon } from 'lucide-vue-next'
 import { useThemeStore } from '../stores/theme'
 import { storeToRefs } from 'pinia'
 
@@ -48,7 +48,8 @@ export default {
   components: {
     EuroIcon,
     CalculatorIcon,
-    BeerIcon
+    BeerIcon,
+    ClockIcon
   },
   setup() {
     const themeStore = useThemeStore()
@@ -68,16 +69,22 @@ export default {
           iconComponent: 'EuroIcon'
         },
         {
-          name: 'Getränke Bestellung',
-          description: 'Verwalte und berechne Getränkebestellungen',
+          name: 'Getränke-Rechner',
+          description: 'Rechner für schnelles Addieren von Getränkepreisen',
           path: '/drink-order',
           iconComponent: 'BeerIcon'
         },
         {
-          name: 'Tool 3',
-          description: 'Beschreibung für Tool 3',
-          path: '/tool3',
-          iconComponent: 'CalculatorIcon'
+          name: 'Fullscreen Uhr',
+          description: 'Zeige eine große Uhr im Vollbildmodus an',
+          path: '/clock',
+          iconComponent: 'ClockIcon'
+        },
+        {
+          name: 'Timer',
+          description: 'Timer für Künstler*innen',
+          path: '/timer',
+          iconComponent: 'ClockIcon'
         }
       ]
     }
